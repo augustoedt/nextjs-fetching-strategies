@@ -4,16 +4,20 @@ export default function Home() {
   const router = useRouter();
   const routes = [
     {
-      title: "CSR",
+      title: "Client Side Rendering - CSR",
       url: "/csr",
     },
     {
-      title: "SSR",
+      title: "Server Side Rendering - SSR",
       url: "/ssr",
     },
     {
-      title: "SSG",
+      title: "Static Site Generation - SSG",
       url: "/ssg",
+    },
+    {
+      title: "Incremental Static Regneration - ISR",
+      url: "/isr",
     },
   ];
 
