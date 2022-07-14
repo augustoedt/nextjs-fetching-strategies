@@ -1,3 +1,3 @@
-## Implementing SSG SSR and CSG
+## Implementing SSG, SSR, CSG and ISR
 
-Fetching google book api with multiple rendering strategies to understand how CSR, SSR and SSQ works
+Fetching Google Book API with multiple rendering strategies to understand how CSR, SSR, SSG and ISR works
