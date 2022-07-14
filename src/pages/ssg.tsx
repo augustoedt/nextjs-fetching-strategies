@@ -1,6 +1,6 @@
 // Server Side Rendering (SSR)
 
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 export default function SSG({books}) {
 
@@ -15,7 +15,7 @@ export default function SSG({books}) {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     const searchTerm = "nextjs";
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
     const data = await response.json()
