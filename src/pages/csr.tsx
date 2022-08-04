@@ -1,6 +1,7 @@
 // Client Side Rendering (CSR)
 
 import { useEffect, useState } from "react";
+import { IBook } from "../entities/book";
 
 export default function CSR() {
   const [books, setBooks] = useState([]);
@@ -10,8 +11,7 @@ export default function CSR() {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
-        const books = data.items.map((item) => item.volumeInfo.title);
+        const books = data.items.map((item: IBook) => item.volumeInfo.title);
         setBooks(books);
       });
   }, []);

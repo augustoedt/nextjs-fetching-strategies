@@ -1,9 +1,12 @@
 // Server Side Rendering (SSR)
 
 import { GetStaticProps } from "next";
+import { IBook, IBookProps } from "../entities/book";
 
-export default function ISR({books}) {
+export default function ISR(props : IBookProps) {
 
+  const { books } = props;
+  
   return (
     <div>
       <ul>
@@ -19,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const searchTerm = "nextjs";
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
     const data = await response.json()
-    const books = data.items.map(item=>item.volumeInfo.title)
+    const books : string[] = data.items.map((item : IBook)=>item.volumeInfo.title)
     return {
         props: {
             books: books
